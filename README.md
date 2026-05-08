@@ -1,4 +1,4 @@
-# 📄 CV Generator — Zetsche-Layout
+# 📄 CV Generator — Mister-0nion's-Layout
 
 Professioneller Lebenslauf-Generator mit automatischem Layout-Management und 5 Farbpaletten.
 
