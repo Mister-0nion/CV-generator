@@ -161,7 +161,7 @@ with st.sidebar:
 
 # ─── Hauptbereich ────────────────────────────────────────────────────────────
 st.markdown("# 📄 CV Generator")
-st.caption("Professioneller Lebenslauf im Zetsche-Layout · automatisch layout-optimiert")
+st.caption("Professioneller Lebenslauf im Onion-Layout · automatisch layout-optimiert")
 st.markdown("---")
 
 # ── Tab-Struktur ──────────────────────────────────────────────────────────────
