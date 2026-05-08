@@ -1,5 +1,5 @@
 """
-streamlit_app.py — CV Generator (Zetsche-Layout)
+streamlit_app.py — CV Generator (Mister-0nion-Layout)
 Starten lokal:  streamlit run streamlit_app.py
 Hosting:        streamlit.io (kostenlos)
 """
