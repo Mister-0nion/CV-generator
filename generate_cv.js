@@ -13,7 +13,7 @@
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
   ImageRun, AlignmentType, BorderStyle, WidthType, ShadingType,
-  VerticalAlign, HeadingLevel, LevelFormat, UnderlineType,
+  VerticalAlign, HeadingLevel, LevelFormat, UnderlineType, HeightRule,
 } = require('docx');
 const fs   = require('fs');
 const path = require('path');
@@ -608,11 +608,19 @@ async function buildCV(data, palette, outputPath) {
   ];
 
   // ── Tabelle (Layout-Träger) ──
+  // Zeilenhöhe = exakt A4-Seitenhöhe (in Twips: DXA).
+  // "exact" verhindert, dass Word die Zeile bei mehr Inhalt aufbläht
+  // und eine Leerseite erzeugt. Der Inhalt wird ggf. abgeschnitten,
+  // aber bei einem einseitigen CV passt alles auf eine Seite.
+  const ROW_HEIGHT_DXA = PAGE_H; // 16838 Twips = A4-Höhe
+
   const layoutTable = new Table({
     width: { size: PAGE_W, type: WidthType.DXA },
     columnWidths: [SIDEBAR_W, MAIN_W],
     rows: [
       new TableRow({
+        // Zeile exakt auf Seitenhöhe fixieren → Sidebar-Farbe füllt immer durch
+        height: { value: ROW_HEIGHT_DXA, rule: HeightRule.EXACT },
         children: [
           // Linke Sidebar
           new TableCell({
