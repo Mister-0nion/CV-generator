@@ -1,7 +1,7 @@
 /**
  * generate_cv.js
  * ──────────────
- * Erzeugt einen professionellen Lebenslauf im Zetsche-Stil:
+ * Erzeugt einen professionellen Lebenslauf im Bewerber-Stil:
  *   - Zweispaltig: linke Sidebar (farbig) + rechte Hauptspalte (weiß)
  *   - Oben in der Sidebar: Platz für Profilbild
  *   - Farbpalette vollständig konfigurierbar via JSON
@@ -23,7 +23,7 @@ const path = require('path');
 // ─────────────────────────────────────────────
 
 const PALETTES = {
-  // Original Zetsche-Grün
+  // Original Onion-Grün
   green: {
     sidebarBg:      '0A5C46',
     sidebarText:    'FFFFFF',
